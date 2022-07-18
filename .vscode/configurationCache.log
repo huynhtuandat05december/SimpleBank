@@ -1,0 +1,1 @@
+{"buildTargets":["createdb","dropdb","generate","migratedown","migrateup"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

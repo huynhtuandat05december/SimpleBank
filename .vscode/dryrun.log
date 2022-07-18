@@ -1,0 +1,5 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'd:/VScode/golang-basic/SimpleBank'
+docker exec -it postgres_bank createdb --username=root simple_bank
+make: Leaving directory 'd:/VScode/golang-basic/SimpleBank'
+ 
