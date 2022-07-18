@@ -2,7 +2,7 @@ package dto
 
 type CreateAccountDTO struct {
 	Owner    string `json:"owner" binding:"required"`
-	Currency string `json:"currency" binding:"required,oneof=USD EUR CAD"`
+	Currency string `json:"currency" binding:"required,currency"`
 }
 
 type GetListAccountDTO struct {
