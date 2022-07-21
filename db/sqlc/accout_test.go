@@ -11,8 +11,10 @@ import (
 )
 
 func CreateRandomAccount(t *testing.T) Account {
+	owner := CreateRandomUser(t)
+
 	arg := CreateAccountParams{
-		Owner:    ultis.RandomOwner(),
+		Owner:    owner.Username,
 		Balance:  int64(ultis.RandomMoney()),
 		Currency: ultis.RandomCurrency(),
 	}

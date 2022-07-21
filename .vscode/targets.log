@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 18 17:51:21 2022
+# Make data base, printed on Thu Jul 21 16:51:45 2022
 
 # Variables
 
@@ -41,7 +41,7 @@ GOPATH = C:\Users\Admin\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_14884_JWYSSEFOBPQBTCRW
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11820_YBTMGHPGYQMCYWMV
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -53,7 +53,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Admin\AppData\Roaming\Code\CachedData\b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+VSCODE_CODE_CACHE_PATH = C:\Users\Admin\AppData\Roaming\Code\CachedData\3b889b090b5ad5793f524b5d1d39fda662b96a2a
 # environment
 LANG = C
 # default
@@ -89,7 +89,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 14884
+VSCODE_PID = 11820
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -191,7 +191,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Users\Admin\AppData\Local\Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\1fa9692ca970862365dc969f915639a2-1.69.1-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\1fa9692ca970862365dc969f915639a2-1.69.2-main-sock
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # default
@@ -221,15 +221,22 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 11, GenuineIntel
 
 # Directories
 
-# . (key d:/VScode/SimpleBank, mtime 1658137535): 12 files, no impossibilities.
+# . (key d:/VScode/SimpleBank, mtime 1658172157): 18 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
 
 # Files
+
+start:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 14):
+	go run main.go
 
 migratedown:
 #  Implicit rule search has not been done.
@@ -243,12 +250,12 @@ generate:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 10):
-	docker run --rm -v "D:/VScode/golang-basic/SimpleBank:/src" -w /src kjconroy/sqlc generate
+	docker run --rm -v "D:/VScode/SimpleBank:/src" -w /src kjconroy/sqlc generate
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-18 17:30:17
+#  Last modified 2022-07-18 22:40:33
 #  File has been updated.
 #  Successfully updated.
 
@@ -258,6 +265,13 @@ dropdb:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 4):
 	docker exec -it postgres_bank dropdb simple_bank
+
+server:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
+	nodemon --exec go run main.go
 
 migrateup:
 #  Implicit rule search has not been done.
@@ -294,19 +308,19 @@ createdb:
 	docker exec -it postgres_bank createdb --username=root simple_bank
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/20=0%
+# Load=12/1024=1%, Rehash=0, Collisions=0/22=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 147 B / avg = 7 B
-# current buf: size = 8174 B / used = 147 B / count = 21 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 210 B / avg = 7 B
+# current buf: size = 8174 B / used = 210 B / count = 29 / avg = 7 B
 
-# strcache performance: lookups = 31 / hit rate = 32%
+# strcache performance: lookups = 41 / hit rate = 29%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/31=0%
-# Finished Make data base on Mon Jul 18 17:51:21 2022
+# Load=29/8192=0%, Rehash=0, Collisions=0/41=0%
+# Finished Make data base on Thu Jul 21 16:51:45 2022
 
  

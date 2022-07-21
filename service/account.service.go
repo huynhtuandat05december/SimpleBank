@@ -41,6 +41,7 @@ func (service *accountService) GetAccountByID(accountID int64) (db.Account, erro
 
 func (service *accountService) GetListAccount(arg dto.GetListAccountDTO) ([]db.Account, error) {
 	listAccountParams := db.ListAccountsParams{
+		Owner:  arg.Owner,
 		Limit:  arg.Limit,
 		Offset: (arg.Page - 1) * arg.Limit,
 	}

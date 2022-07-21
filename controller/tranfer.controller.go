@@ -1,18 +1,21 @@
 package controller
 
 import (
+	"errors"
 	"fmt"
 	"net/http"
 
+	db "github.com/512/simple_bank/db/sqlc"
 	"github.com/512/simple_bank/dto"
 	"github.com/512/simple_bank/service"
+	"github.com/512/simple_bank/service/token"
 	"github.com/512/simple_bank/ultis"
 	"github.com/gin-gonic/gin"
 )
 
 type TransferController interface {
 	CreateTransfer(ctx *gin.Context)
-	SameAccountCurrency(ctx *gin.Context, accountID int64, currency string) bool
+	ValidAccount(ctx *gin.Context, accountID int64, currency string) (db.Account, error)
 }
 
 type transferController struct {
@@ -36,14 +39,25 @@ func (controller *transferController) CreateTransfer(ctx *gin.Context) {
 		return
 	}
 
-	if !controller.SameAccountCurrency(ctx, createTransferDTO.FromAccountID, createTransferDTO.Currency) {
+	fromAccount, err := controller.ValidAccount(ctx, createTransferDTO.FromAccountID, createTransferDTO.Currency)
+	if err != nil {
+		res := ultis.BuildErrorResponse("Failed to process get", err.Error(), ultis.EmptyObj{})
+		ctx.AbortWithStatusJSON(http.StatusBadRequest, res)
 		return
 	}
-
-	if !controller.SameAccountCurrency(ctx, createTransferDTO.ToAccountID, createTransferDTO.Currency) {
+	authPayload := ctx.MustGet("payload").(*token.Payload)
+	if fromAccount.Owner != authPayload.Username {
+		err := errors.New("from account doesn't belong to the authenticated user")
+		res := ultis.BuildErrorResponse("Failed to process get", err.Error(), ultis.EmptyObj{})
+		ctx.AbortWithStatusJSON(http.StatusBadRequest, res)
 		return
 	}
-
+	_, err = controller.ValidAccount(ctx, createTransferDTO.FromAccountID, createTransferDTO.Currency)
+	if err != nil {
+		res := ultis.BuildErrorResponse("Failed to process get", err.Error(), ultis.EmptyObj{})
+		ctx.AbortWithStatusJSON(http.StatusBadRequest, res)
+		return
+	}
 	resultTransferTx, err := controller.transferService.CreateTransfer(createTransferDTO)
 	if err != nil {
 		res := ultis.BuildErrorResponse("Failed to process create", err.Error(), ultis.EmptyObj{})
@@ -56,20 +70,15 @@ func (controller *transferController) CreateTransfer(ctx *gin.Context) {
 
 }
 
-func (controller *transferController) SameAccountCurrency(ctx *gin.Context, accountID int64, currency string) bool {
+func (controller *transferController) ValidAccount(ctx *gin.Context, accountID int64, currency string) (db.Account, error) {
 	account, err := controller.accountService.GetAccountByID(accountID)
 	if err != nil {
-		res := ultis.BuildErrorResponse("Failed to process get", err.Error(), ultis.EmptyObj{})
-		ctx.AbortWithStatusJSON(http.StatusBadRequest, res)
-		return false
+		return account, err
 	}
-
 	if account.Currency != currency {
-		err := fmt.Sprintf("account [%d] currency mismatch: %s vs %s", account.ID, account.Currency, currency)
-		res := ultis.BuildErrorResponse("Failed to process transfer", err, ultis.EmptyObj{})
-		ctx.AbortWithStatusJSON(http.StatusBadRequest, res)
-		return false
+		messageErr := fmt.Sprintf("account [%d] currency mismatch: %s vs %s", account.ID, account.Currency, currency)
+		err := errors.New(messageErr)
+		return account, err
 	}
-
-	return true
+	return account, nil
 }
