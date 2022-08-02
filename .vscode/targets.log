@@ -8,10 +8,12 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 21 16:51:45 2022
+# Make data base, printed on Tue Aug 02 17:17:02 2022
 
 # Variables
 
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -21,11 +23,11 @@ LC_ALL = C
 # environment
 USERPROFILE = C:\Users\Admin
 # environment
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
+# environment
 LOCALAPPDATA = C:\Users\Admin\AppData\Local
 # environment
-WSLENV = WT_SESSION::WT_PROFILE_ID
-# environment
-VSCODE_CWD = D:\VScode\SimpleBank
+VSCODE_CWD = C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code
 # environment
 CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
@@ -33,7 +35,7 @@ SYSTEMROOT = C:\WINDOWS
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-PSMODULEPATH = C:\Users\Admin\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # environment
@@ -41,7 +43,9 @@ GOPATH = C:\Users\Admin\go
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11820_YBTMGHPGYQMCYWMV
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_18376_QKDPVJDPRLLQATNX
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -89,13 +93,11 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 11820
+VSCODE_PID = 18376
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
 POSH_THEMES_PATH = C:\Users\Admin\AppData\Local\Programs\oh-my-posh\themes
-# environment
-WT_PROFILE_ID = {61c54bbd-c2c6-5271-96e7-009a87ff44bf}
 # automatic
 *F = $(notdir $*)
 # automatic
@@ -125,19 +127,19 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\OpenJDK\openjdk-11.0.13_8\bin;D:\golang\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Admin\scoop\shims;C:\Users\Admin\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Admin\AppData\Local\Programs\Python\Python310\;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Admin\AppData\Roaming\npm;C:\Users\Admin\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\7-Zip;C:\Users\Admin\AppData\Local\Programs\oh-my-posh\bin;C:\Program Files\heroku\bin;C:\Users\Admin\go\bin
+PATH = C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\OpenJDK\openjdk-11.0.13_8\bin;D:\golang\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\HashiCorp\Vagrant\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Admin\scoop\shims;C:\Users\Admin\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Admin\AppData\Local\Programs\Python\Python310\;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Admin\AppData\Roaming\npm;C:\Users\Admin\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\7-Zip;;C:\Users\Admin\AppData\Local\Programs\oh-my-posh\bin;C:\Program Files\heroku\bin;C:\Users\Admin\go\bin
 # environment
 COMPUTERNAME = DESKTOP-RB88P7M
 # default
 MAKEFILES := 
+# makefile (from 'Makefile', line 1)
+DB_URL = postgres://root:password@localhost:5000/simple_bank?sslmode=disable
 # automatic
 ^F = $(notdir $^)
 # environment
 PROMPT = $P$G
 # environment
 CHOCOLATEYLASTPATHUPDATE = 132919625407888060
-# environment
-WT_SESSION = b802d7c6-90cf-4eff-89bc-0f2a532b8bd5
 # environment
 LOGONSERVER = \\DESKTOP-RB88P7M
 # environment
@@ -149,7 +151,7 @@ COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
 # environment
 PROGRAMW6432 = C:\Program Files
 # environment
-PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # automatic
 +F = $(notdir $+)
 # environment
@@ -203,9 +205,7 @@ SUFFIXES :=
 # environment
 ALLUSERSPROFILE = C:\ProgramData
 # environment
-VSCODE_CLI = 1
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
+SESSIONNAME = Console
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
@@ -213,7 +213,7 @@ PROCESSOR_REVISION = 8e0b
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 11, GenuineIntel
 # variable set hash-table stats:
-# Load=100/1024=10%, Rehash=0, Collisions=7/127=6%
+# Load=100/1024=10%, Rehash=0, Collisions=8/127=6%
 
 # Pattern-specific Variable Values
 
@@ -221,9 +221,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 11, GenuineIntel
 
 # Directories
 
-# . (key d:/VScode/SimpleBank, mtime 1658172157): 18 files, no impossibilities.
+# . (key d:/VScode/SimpleBank, mtime 1659382281): 21 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 21 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -235,27 +235,27 @@ start:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 14):
+#  recipe to execute (from 'Makefile', line 20):
 	go run main.go
 
 migratedown:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 8):
-	migrate -path db/migration -database postgres://root:password@localhost:5000/simple_bank?sslmode=disable down
+#  recipe to execute (from 'Makefile', line 12):
+	migrate -path db/migration -database "$(DB_URL)" down
 
 generate:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 10):
+#  recipe to execute (from 'Makefile', line 16):
 	docker run --rm -v "D:/VScode/SimpleBank:/src" -w /src kjconroy/sqlc generate
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-18 22:40:33
+#  Last modified 2022-07-21 17:33:48
 #  File has been updated.
 #  Successfully updated.
 
@@ -263,22 +263,29 @@ dropdb:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 4):
+#  recipe to execute (from 'Makefile', line 6):
 	docker exec -it postgres_bank dropdb simple_bank
+
+migratedown1:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 14):
+	migrate -path db/migration -database "$(DB_URL)" down 1
 
 server:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 16):
+#  recipe to execute (from 'Makefile', line 22):
 	nodemon --exec go run main.go
 
 migrateup:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 6):
-	migrate -path db/migration -database postgres://root:password@localhost:5000/simple_bank?sslmode=disable up
+#  recipe to execute (from 'Makefile', line 8):
+	migrate -path db/migration -database "$(DB_URL)" up
 
 # Not a target:
 .DEFAULT:
@@ -297,30 +304,37 @@ test:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 12):
+#  recipe to execute (from 'Makefile', line 18):
 	go test -v -cover ./...
+
+migrateup1:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 10):
+	migrate -path db/migration -database "$(DB_URL)" up 1
 
 createdb:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 2):
+#  recipe to execute (from 'Makefile', line 4):
 	docker exec -it postgres_bank createdb --username=root simple_bank
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/22=0%
+# Load=14/1024=1%, Rehash=0, Collisions=0/24=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 210 B / avg = 7 B
-# current buf: size = 8174 B / used = 210 B / count = 29 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 276 B / avg = 8 B
+# current buf: size = 8174 B / used = 276 B / count = 34 / avg = 8 B
 
-# strcache performance: lookups = 41 / hit rate = 29%
+# strcache performance: lookups = 48 / hit rate = 29%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=0/41=0%
-# Finished Make data base on Thu Jul 21 16:51:45 2022
+# Load=34/8192=0%, Rehash=0, Collisions=0/48=0%
+# Finished Make data base on Tue Aug 02 17:17:02 2022
 
  
